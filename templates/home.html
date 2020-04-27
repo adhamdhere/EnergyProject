@@ -1,0 +1,55 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Energy Project</title>
+    <link rel="stylesheet" href="https://unpkg.com/tailwindcss@^1.2/dist/tailwind.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Muli:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/pattern.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Muli', sans-serif;
+        }
+    </style>
+</head>
+
+<body class="text-gray-800">
+<div class="h-2 w-full bg-green-400"></div>
+<div class="h-screen mh-1080 bg-gray-100">
+    <div class="container mx-auto z-10">
+        <nav class="w-100 pt-8 mx-4">
+            <a href='#' class="inline-block mr-6 font-black text-green-400 text-2xl align-middle">Energy<span class="text-gray-600">Project</span></a>
+        </nav>
+    </div>
+    <section class="container mx-auto py-10 px-5">
+        <!--<div class="pattern-dots-xl text-gray-300 absolute" style="height: 4rem; width: 4rem; top: 4rem; left: 0;"></div>-->
+        <div class="text-left md:text-center">
+            <div class="font-semibold text-3xl md:text-5xl pt-20 leading-tight">
+                <div class="text-5xl md:text-6xl font-black tracking-tight">Roofs can do more! <br class="block md:hidden"/><span class="text-green-400">We are here to help you realise how much</span>.</div>
+            </div>
+            <div class="mt-2 mb-8 max-w-4xl text-2xl text-gray-600 md:mx-auto">Easily find how much electricity you can produce or water you can save by just drawing on your roof!</div>
+            <div class="py-4">
+                <a href="{% url 'signup' %}" class="text-xl px-6 py-4 mr-6 bg-green-400 hover:bg-green-700 transition duration-200 ease-in-out rounded-lg text-white font-bold">Find Savings</a>
+                <br class="hidden sm:block">
+                <!--<a href="#" class="sm:block mt-2 sm:text-lg sm:font-normal text-xl font-bold text-gray-600 py-4 mr-6">Contact Sales</a>-->
+            </div>
+        </div>
+    </section>
+</div>
+
+<section id="CTA" class="bg-green-400 py-12 px-5 border-b-8 border-green-700">
+    <div class="container mx-auto">
+        <div class="lg:flex lg:items-center lg:justify-between">
+            <h2 class="text-3xl leading-9 font-extrabold tracking-tight text-green-900 sm:text-4xl sm:leading-10">
+                <span class="text-white">Join the roof energy movement today</span>
+            </h2>
+            <div class="mt-8 flex lg:flex-shrink-0 lg:mt-0">
+                <div class="inline-flex rounded-lg">
+                    <a href="{% url 'signup' %}" class="text-xl px-6 py-4 mr-6 bg-green-700 hover:bg-green-800 transition duration-200 ease-in-out rounded-lg text-white font-bold">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>
