@@ -12,20 +12,20 @@ public class OpenWeatherCommunicationsManager {
 
     // Requires lat and lon
     public static double getAverageRain(double lat, double lon){
-        String url = " " + lat + "," + lon;
+        String url = Constants.OPEN_WEATHER_FILE_URL; //when external URL, add + lat, + lon
         ObjectMapper objectMapper = new ObjectMapper();
         objectMapper.configure(
                 DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
 
         try{
-            URL fileURL = new URL(Constants.OPEN_WATHER_FILE_URL);
+            URL fileURL = new URL(url);
             OpenWeatherValues weatherData = objectMapper.readValue(fileURL, OpenWeatherValues.class);
             double sum = 0.0;
             for(Result r : weatherData.getResult()){
                 sum += r.getPrecipitation().getMean();
             }
 
-            return sum/weatherData.getResult().length;
+            return sum;
 
         }
 

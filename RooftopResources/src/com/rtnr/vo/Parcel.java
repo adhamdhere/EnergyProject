@@ -1,49 +1,37 @@
 package com.rtnr.vo;
 
+import com.rtnr.data.Coordinate;
+
 public class Parcel {
     private double latitude;
     private double longitude;
-    private double[] coordinates;
     private String address;
+    private Coordinate[] coordinate;
+    
+	public double getLatitude() {
+		return latitude;
+	}
+	public void setLatitude(double latitude) {
+		this.latitude = latitude;
+	}
+	public double getLongitude() {
+		return longitude;
+	}
+	public void setLongitude(double longitude) {
+		this.longitude = longitude;
+	}
+	public Coordinate[] getCoordinate() {
+		return coordinate;
+	}
+	public void setCoordinate(Coordinate[] coordinate) {
+		this.coordinate = coordinate;
+	}
+	public String getAddress() {
+		return address;
+	}
+	public void setAddress(String address) {
+		this.address = address;
+	}
 
-    // Setter, latitude
-    public void setLatitude(double lat){
-        latitude = lat;
-    }
-
-    // Setter, longitude
-    public void setLongitude(double lon){
-        longitude = lon;
-    }
-
-    // Setter, coordinates array
-    public void setCoordinates(double[] coord){
-        coordinates = coord;
-    }
-
-    // Setter, address
-    public void setAddress(String addr){
-        address = addr;
-    }
-
-    // Getter, latitude
-    public double getLatitude(){
-        return latitude;
-    }
-
-    // Getter, longitude
-    public double getLongitude(){
-        return longitude;
-    }
-
-    // Getter, coordinate array
-    public double[] getCoordinates(){
-        return coordinates;
-    }
-
-    // Getter, address
-    public String getAddress(){
-        return address;
-    }
-
+   
 }
