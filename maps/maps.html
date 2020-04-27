@@ -120,6 +120,7 @@
         var markers = [];
         // Listen for the event fired when the user selects a prediction and retrieve
         // more details for that place.
+
         searchBox.addListener('places_changed', function() {
 
           i = i + 1;
@@ -137,6 +138,7 @@
 
           // For each place, get the icon, name and location.
           var bounds = new google.maps.LatLngBounds();
+          var search_coords;
           places.forEach(function(place) {
             if (!place.geometry) {
               console.log("Returned place contains no geometry");
@@ -165,7 +167,8 @@
             } else {
               
               bounds.extend(place.geometry.location);
-            }     
+            }
+            search_coords = place.geometry.location.toJSON();     
           });
           map.fitBounds(bounds);
 
@@ -181,9 +184,15 @@
             markerOptions: {icon: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'},
           });
           drawingManager.setMap(map);
+
+          var addy = searchBox.getPlaces()
+          var result = {
+            "locationCoordinate": search_coords,
+            "address": addy[0]['formatted_address'],
+            "coordinate" : [],
+            "area": null
+          }
           
-
-
           google.maps.event.addListener(drawingManager, 'overlaycomplete', function(event) {
             if (event.type == 'polygon') {
               var newShape = event.overlay;
@@ -191,13 +200,19 @@
               var arr = newShape.getPath(map);
               //arr.getArray();
               arr = arr.getArray();
-              for (var i = 0; i < arr.length; i++) {
-                console.log(JSON.stringify(arr[i]));
-              }
-
-              var area = google.maps.geometry.spherical.computeArea(newShape.getPath());
-              console.log(area);
               
+            
+              for (var i = 0; i < arr.length; i++) {
+                //result.push([arr[i], ])
+                //var json = JSON.parse(arr);
+                
+                /*result.push(JSON.stringify(arr[i]));*/
+                var json = arr[i].toJSON();
+                result['coordinate'].push(json);
+              }
+              var area = google.maps.geometry.spherical.computeArea(newShape.getPath());
+              result['area'] = area;
+              console.log(result);
             }
           });
           
