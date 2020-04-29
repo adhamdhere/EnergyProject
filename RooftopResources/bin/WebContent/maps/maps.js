@@ -290,7 +290,7 @@ function initAutocomplete() {
         var result = {
             "locationCoordinate": search_coords,
             "address": addy[0]['formatted_address'],
-            "polygonCoordinate" : [],
+            "coordinate" : [],
             "area": null
         }
 
@@ -305,34 +305,11 @@ function initAutocomplete() {
             arr = arr.getArray();
             for (var i = 0; i < arr.length; i++) {
                 var json = arr[i].toJSON();
-                result['polygonCoordinate'].push(json);
+                result['coordinate'].push(json);
             }
             var area = google.maps.geometry.spherical.computeArea(newShape.getPath());
             result['area'] = area;
             console.log(result);
-            
-            //server call try 2
-            var jsonString = JSON.stringify(result);
-            const url = 'http://localhost:8080/RooftopResources/RooftopNaturalResources';
-            $.post(url, jsonString, function(data, status){
-            	console.log(data)
-            });
-            
-            //old server call, ignore
-          /*  var http = new XMLHttpRequest();
-            var url = 'http://localhost:8080/RooftopResources/RooftopNaturalResources';
-
-            //Send the proper header information along with the request
-            http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-
-            http.onreadystatechange = function() {//Call a function when the state changes.
-                if(http.readyState == 4 && http.status == 200) {
-                    var response = http.responseText;
-                    console.log(response);
-                }
-            }
-            http.send(result);*/
-            
         }
         });
         

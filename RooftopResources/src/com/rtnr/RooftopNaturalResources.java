@@ -64,11 +64,10 @@ public class RooftopNaturalResources extends HttpServlet {
 	      BufferedReader reader;
 	      
 	      PrintWriter out = response.getWriter();
-	      Parcel p = null;
 	        
 		  try {
 		    reader = request.getReader();
-		    p = objectMapper.readValue(reader, Parcel.class);
+		    Parcel p = objectMapper.readValue(reader, Parcel.class);
 			  
 			Analysis a = Analyzer.analyze(p);
 			out.println(a.getWaterSavings());
@@ -79,7 +78,7 @@ public class RooftopNaturalResources extends HttpServlet {
 		  } 
 		  
 		  catch (Exception e) { 
-			  throw new IOException("Error parsing JSON request string"); /*report an error*/ 
+			  throw new IOException("Error parsing JSON request string " + e.getMessage()); /*report an error*/ 
 			  }
 		  
 		  

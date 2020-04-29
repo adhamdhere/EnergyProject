@@ -2,20 +2,20 @@ package com.rtnr.data;
 
 public class Coordinate {
 	
-	private double latitude;
-	private double longitude;
+	private double lat;
+	private double lng;
 	
-	public double getLatitude() {
-		return latitude;
+	public double getLat() {
+		return lat;
 	}
-	public void setLatitude(double latitude) {
-		this.latitude = latitude;
+	public void setLat(double latitude) {
+		this.lat = latitude;
 	}
-	public double getLongitude() {
-		return longitude;
+	public double getLng() {
+		return lng;
 	}
-	public void setLongitude(double longitude) {
-		this.longitude = longitude;
+	public void setLng(double longitude) {
+		this.lng = longitude;
 	}
 	
 }

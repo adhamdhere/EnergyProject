@@ -1,6 +1,5 @@
 package com.rtnr.engine;
 
-import com.rtnr.data.Coordinate;
 import com.rtnr.utils.OpenWeatherCommunicationsManager;
 import com.rtnr.vo.Analysis;
 import com.rtnr.vo.Parcel;
@@ -18,27 +17,25 @@ public class Analyzer {
 
         Analysis a = new Analysis();
         a.setP(p);
-        a.setWaterSavings(shoelaceArea(p.getCoordinate()) * OpenWeatherCommunicationsManager.getAverageRain(p.getLatitude(), p.getLongitude()));
+        a.setWaterSavings(p.getArea() * OpenWeatherCommunicationsManager.getAverageRain(p.getLocationCoordinate().getLat(), p.getLocationCoordinate().getLng()));
         return a;
 
     }
-    
-    private static double shoelaceArea(Coordinate[] c) {
-    	   int n = c.length;
-           double a = 0.0;
-           for (int i = 0; i < n - 1; i++) {
-               a += c[i].getLatitude() * c[i + 1].getLongitude() - c[i + 1].getLatitude() * c[i].getLongitude();
-           }
-           
-           return Math.abs(a + c[n - 1].getLatitude() * c[0].getLongitude() - c[0].getLatitude() * c[n - 1].getLongitude()) / 2.0;
-    }
-    
-    
-	/*
-	 * private static double shoelaceArea(List<Point> v) { int n = v.size(); double
-	 * a = 0.0; for (int i = 0; i < n - 1; i++) { a += v.get(i).x * v.get(i + 1).y -
-	 * v.get(i + 1).x * v.get(i).y; } return Math.abs(a + v.get(n - 1).x *
-	 * v.get(0).y - v.get(0).x * v.get(n - 1).y) / 2.0; }
-	 */
-    
+
+        /*
+         * private static double shoelaceArea(Coordinate[] c) { int n = c.length; double
+         * a = 0.0; for (int i = 0; i < n - 1; i++) { a += c[i].getLatitude() * c[i +
+         * 1].getLongitude() - c[i + 1].getLatitude() * c[i].getLongitude(); }
+         *
+         * return Math.abs(a + c[n - 1].getLatitude() * c[0].getLongitude() -
+         * c[0].getLatitude() * c[n - 1].getLongitude()) / 2.0; }
+         */
+
+        /*
+         * private static double shoelaceArea(List<Point> v) { int n = v.size(); double
+         * a = 0.0; for (int i = 0; i < n - 1; i++) { a += v.get(i).x * v.get(i + 1).y -
+         * v.get(i + 1).x * v.get(i).y; } return Math.abs(a + v.get(n - 1).x *
+         * v.get(0).y - v.get(0).x * v.get(n - 1).y) / 2.0; }
+         */
+
 }
