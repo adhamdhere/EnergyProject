@@ -1,5 +1,8 @@
 #map {
-    height: 50%;
+    height: 70%;
+    margin-left: 6.5%;
+    width: 50%;
+    border-radius: 5%;
   }
   /* Optional: Makes the sample page fill the window. */
   html, body {
@@ -41,6 +44,7 @@
     margin-right: 12px;
   }
 
+  
   .pac-controls {
     display: inline-block;
     padding: 5px 11px;
@@ -53,13 +57,17 @@
   }
 
   #pac-input {
-    background-color: #fff;
+    background-color: #000000;
+    color: white;
     font-family: Roboto;
     font-size: 15px;
     font-weight: 300;
     margin-left: 12px;
+    margin-top: 10px;
     padding: 0 11px 0 13px;
     text-overflow: ellipsis;
+    border-radius: 15px;
+    height: 40px;
     width: 400px;
   }
 
