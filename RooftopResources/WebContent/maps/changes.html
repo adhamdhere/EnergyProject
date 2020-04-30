@@ -6,20 +6,24 @@
     <link rel="stylesheet" href="https://unpkg.com/tailwindcss@^1.2/dist/tailwind.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Muli:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/pattern.css" rel="stylesheet">
+    <link rel = "stylesheet" href = "maps.css">
     <style>
         body {
-            font-family: 'Muli', sans-serif;
-        }
+                font-family: 'Muli', sans-serif;
+            }
     </style>
 </head>
 
-<body class="text-gray-800">
+<body class="text-gray-800 bg-gray-100">
     <!--top green line-->
     <div class="h-1 w-full bg-green-400"></div>
-    <div class="h-screen mh-1080 bg-gray-100">
-        <div class="container mx-auto z-10">
-            <nav class="w-100 pt-8 mx-4">
-                <a href='file:///Users/simar/Desktop/EnergyProject/RooftopResources/WebContent/maps/home.html' class="inline-block mr-6 font-black text-green-400 text-2xl align-middle">Energy<span class="text-gray-600">Project</span></a>
+    <div class="h-screen mh-1080">
+        <div class="mx-auto z-10">
+            <nav class="w-100 pt-8 mx-20 rounded-sm">
+                    <a href='file:///Users/simar/Desktop/EnergyProject/RooftopResources/WebContent/maps/home.html' class="inline-block mr-6 font-black text-green-400 text-2xl align-middle">Energy<span class="text-gray-600">Project</span></a>
+                    <div class="float-right">
+                        <a href="{% url 'login' %}" class="py-2 px-4 bg-green-400 rounded-lg text-white font-bold hover:bg-green-700">About</a>
+                    </div>
             </nav>
         </div>
         <section class="container mx-auto py-10 px-5">
@@ -30,7 +34,7 @@
                 </div>
                 <div class="mt-2 mb-8 max-w-4xl text-2xl text-gray-600 md:mx-auto">Easily find how much electricity you can produce or water you can save by just drawing polygons on your roof!</div>
                 <div class="py-4">
-                    <a href="file:///Users/simar/Desktop/EnergyProject/RooftopResources/WebContent/maps/maps.html" class="text-xl px-6 py-4 mr-6 bg-green-400 hover:bg-green-700 transition duration-200 ease-in-out rounded-lg text-white font-bold">Find Savings</a>
+                    <a href="#stuff" class="text-xl px-6 py-4 mr-6 bg-green-400 hover:bg-green-700 transition duration-200 ease-in-out rounded-lg text-white font-bold">Find Savings</a>
                     <br class="hidden sm:block">
                     <!--<a href="#" class="sm:block mt-2 sm:text-lg sm:font-normal text-xl font-bold text-gray-600 py-4 mr-6">Contact Sales</a>-->
                 </div>
@@ -38,6 +42,28 @@
         </section>          
     </div>
 
+    
+    <br id = "stuff"><br><br>
+    <section>
+        <div class="mx-auto z-10">
+            <nav class="w-100 pt-8 mx-10 rounded-sm">
+                    <a href='.' class="inline-block mr-6  text-2xl align-middle bg-green-400 text-white rounded-lg">Search for a place and click the polygon icon at the bottom to draw one <br>That simple!</span></a>
+                    <div class="float-right">
+                        <a href="{% url 'login' %}" class="py-2 px-4 bg-green-400 rounded-lg text-white font-bold hover:bg-green-700">About</a>
+                    </div>
+            </nav>
+        </div>
+        <input id="pac-input" class="controls" type="text" placeholder="Search Box">
+        <div id="map"></div>
+    </section>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="maps.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCdJFBao8MmRcz9Cl1HnyW4t2i9LJV3ra4&libraries=places,drawing&callback=initialize"
+    async defer></script>
+
+    <br><br><br><br><br><br><br><br><br><br>
+    
     <section id="CTA" class="bg-green-400 py-12 px-5 border-b-8 border-green-700">
         <div class="container mx-auto">
             <div class="lg:flex lg:items-center lg:justify-between">
