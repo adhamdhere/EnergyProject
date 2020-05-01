@@ -70,7 +70,7 @@ public class RooftopNaturalResources extends HttpServlet {
 		    Parcel p = objectMapper.readValue(reader, Parcel.class);
 			  
 			Analysis a = Analyzer.analyze(p);
-			out.println(a.getWaterSavings());
+			//out.println(a.getWaterSavings());
 			
 			String json = objectMapper.writeValueAsString(a);
 			out.println(json);

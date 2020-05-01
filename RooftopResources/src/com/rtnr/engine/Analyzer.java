@@ -1,5 +1,6 @@
 package com.rtnr.engine;
 
+import com.rtnr.utils.Constants;
 import com.rtnr.utils.OpenWeatherCommunicationsManager;
 import com.rtnr.vo.Analysis;
 import com.rtnr.vo.Parcel;
@@ -17,7 +18,7 @@ public class Analyzer {
 
         Analysis a = new Analysis();
         a.setP(p);
-        a.setWaterSavings(p.getArea() * OpenWeatherCommunicationsManager.getAverageRain(p.getLocationCoordinate().getLat(), p.getLocationCoordinate().getLng()));
+        a.setWaterSavings((p.getArea()/Constants.FEET_SQUARED_TO_METERES_SQUARED) * (OpenWeatherCommunicationsManager.getAverageRain(p.getLocationCoordinate().getLat(), p.getLocationCoordinate().getLng())/Constants.MM_TO_M));
         return a;
 
     }

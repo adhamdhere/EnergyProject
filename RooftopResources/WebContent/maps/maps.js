@@ -44,6 +44,7 @@ function initAutocomplete() {
     var map = new google.maps.Map(document.getElementById('map'), {
         center: {lat: 40.674, lng: -73.945},
         zoom: 12,
+        mapTypeId: 'satellite',
         styles: [
             {
                 "featureType": "all",
@@ -415,7 +416,7 @@ function initAutocomplete() {
         });
         drawingManager.setMap(map);
 
-
+        document.getElementById("water").innerHTML = "";
         var addy = searchBox.getPlaces()
         var result = {
             "locationCoordinate": search_coords,
@@ -443,15 +444,15 @@ function initAutocomplete() {
             
             //server call try 2
             var jsonString = JSON.stringify(result);
-            const url = 'http://localhost:8080/RooftopResources/RooftopNaturalResources';
+            const url = '/RooftopResources/RooftopNaturalResources';
             $.post(url, jsonString, function(data, status){
             	console.log(data)
+            	var analysis = JSON.parse(data);
+            	var waterSaved = parseFloat(analysis.waterSavings).toFixed(2);
+            	document.getElementById("water").innerHTML = waterSaved + " meters<sup>3</sup>";
+                //document.getElementById("electricity").innerHTML = data['electricity'];
             });
-
-            document.getElementById("water").innerHTML = data['waterSavings'];
-            document.getElementById("electricity").innerHTML = data['electricity'];
-            
-            
+  
         }
         });
         
