@@ -65,14 +65,14 @@
     color: black;
     font-family: Roboto;
     font-size: 15px;
-    font-weight: 300;
+    font-weight: 350;
     margin-left: 12px;
     margin-top: 10px;
     padding: 0 11px 0 13px;
     text-overflow: ellipsis;
     border-radius: 15px;
     height: 40px;
-    width: 400px;
+    width: 500px;
   }
 
   #pac-input:focus {

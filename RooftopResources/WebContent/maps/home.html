@@ -16,31 +16,35 @@
 
 <body class="text-gray-800 bg-gray-100">
     <!--top green line-->
-    <div class="h-1 w-full bg-green-400"></div>
+    <div class="h-1 w-full bg-green-600"></div>
     <div class="h-screen mh-1080">
         <div class="mx-auto z-10">
             <nav class="w-100 pt-8 mx-20 rounded-sm">
-                    <a href='file:///Users/simar/Desktop/EnergyProject/RooftopResources/WebContent/maps/home.html' class="inline-block mr-6 font-black text-green-400 text-2xl align-middle">Energy<span class="text-gray-600">Project</span></a>
+                    <a href='file:///Users/simar/Desktop/EnergyProject/RooftopResources/WebContent/maps/home.html' class="inline-block mr-6 font-black text-green-600 text-2xl align-middle">Energy<span class="text-gray-600">Project</span></a>
+                    <!--
                     <div class="float-right">
                         <a href="{% url 'login' %}" class="py-2 px-4 bg-green-400 rounded-lg text-white font-bold hover:bg-green-700">About</a>
-                    </div>
+                    </div>-->
             </nav>
         </div>
-        <section class="container mx-auto py-10 px-5">
+        <section class="container mx-auto px-5">
             <!--<div class="pattern-dots-xl text-gray-300 absolute" style="height: 4rem; width: 4rem; top: 4rem; left: 0;"></div>-->
             <div class="text-left md:text-center">
-                <div class="font-semibold text-3xl md:text-5xl pt-20 leading-tight">
-                    <div class="text-5xl md:text-6xl font-black tracking-tight">Roofs can do more! <br class="block md:hidden"/><span class="text-green-400">We are here to help you realise how much</span>.</div>
+                <div class="font-semibold text-3xl md:text-5xl pt-10 leading-tight">
+                    <div class="text-5xl md:text-6xl font-black tracking-tight">Roofs can do more! <br class="block md:hidden"/><span class="text-green-600">We are here to help you realise how much</span>.</div>
                 </div>
                 <div class="mt-2 mb-8 max-w-4xl text-2xl text-gray-600 md:mx-auto">Easily find how much electricity you can produce or water you can save by just drawing polygons on your roof!</div>
                 <div class="py-4">
-                    <a href="#stuff" class="text-xl px-6 py-4 mr-6 bg-green-400 hover:bg-green-700 transition duration-200 ease-in-out rounded-lg text-white font-bold">Find Savings</a>
+                    <a href="#stuff" class="text-xl px-6 py-4 mr-6 bg-green-600 hover:bg-green-800 transition ease-in-out duration-700 ease-in-out rounded-lg text-white font-bold">Find Savings</a>
                     <br class="hidden sm:block">
-                    <!--<a href="#" class="sm:block mt-2 sm:text-lg sm:font-normal text-xl font-bold text-gray-600 py-4 mr-6">Contact Sales</a>-->
+                </div>
+                <div class = "float-right">
+                    <img src = "house.png" style = "width:540px; height: 283.3px;">
                 </div>
             </div>
         </section>          
     </div>
+    
 
     
     <br id = "stuff">
@@ -51,41 +55,35 @@
         </div>
     </section>-->
 
-    <div class = "pt-32">
-        <div class="inline w-48 h-20 ml-10 py-2 px-4 bg-blue-500 rounded-lg text-white font-bold">
+    <div class = "pt-20">
+        <div class="inline w-auto h-20 ml-10 py-2 px-4 bg-blue-500 rounded-lg text-white font-bold">
             Water saving potential: <span id = "water"></span>
         </div>
-        <div class="inline w-48 h-20 ml-10 py-2 px-4 bg-yellow-500 rounded-lg text-white font-bold">
+        <div class="inline w-auto h-20 ml-10 py-2 px-4 bg-yellow-500 rounded-lg text-white font-bold">
             Electricity saving potential: <span id = "electricity"></span>
         </div>
-        <div class="inline w-64 h-20 ml-10 py-2 px-4 bg-green-500 rounded-lg text-white font-bold">
-            Search for a place and select the white polygon icon to draw one!
-        </div>
-        <input id="pac-input" class="controls" type="text" placeholder="Search Box">
+        <input id="pac-input" class="controls" type="text" placeholder="Search and the polygon icon would appear at the bottom of the map">
         <div id="map"></div>
     </div>
+
+    <div class = "pb-64"></div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="maps.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCdJFBao8MmRcz9Cl1HnyW4t2i9LJV3ra4&libraries=places,drawing&callback=initialize"
     async defer></script>
 
-    <br><br><br><br><br><br><br><br><br><br>
     
-    <section id="CTA" class="bg-green-400 py-12 px-5 border-b-8 border-green-700">
-        <div class="container mx-auto">
-            <div class="lg:flex lg:items-center lg:justify-between">
-                <h2 class="text-3xl leading-9 font-extrabold tracking-tight text-green-900 sm:text-4xl sm:leading-10">
-                    <span class="text-white">Join the roof energy movement today</span>
-                </h2>
-                <div class="mt-8 flex lg:flex-shrink-0 lg:mt-0">
-                    <div class="inline-flex rounded-lg">
-                        <a href="{% url 'signup' %}" class="text-xl px-6 py-4 mr-6 bg-green-700 hover:bg-green-800 transition duration-200 ease-in-out rounded-lg text-white font-bold">Get Started</a>
-                    </div>
-                </div>
-            </div>
+
+    <div class = "bg-green-600 py-4 rounded-t-lg content-center">
+
+        <div class = "text-center text-white text-lg">
+            <span class = "font-bold">Designed and Engineered with </span><span>&hearts;</span><span class = "font-bold"> by </span><a href = "https://www.linkedin.com/in/advaitdhamdhere/" class = "border border-black p-2 rounded-full bg-white text-black font-bold">Advait Dhamadere</a> and <a href = "https://www.linkedin.com/in/simarkapooriu/" class = "border border-black p-2 rounded-full bg-white text-black font-bold">Simar Kapoor</a>
         </div>
-    </section>
+
+
+    </div>
+
 
 
 </body>
