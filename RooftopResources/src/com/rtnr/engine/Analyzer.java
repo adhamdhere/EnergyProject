@@ -1,6 +1,7 @@
 package com.rtnr.engine;
 
 import com.rtnr.utils.Constants;
+import com.rtnr.utils.MeteoStatCommunicationsManager;
 import com.rtnr.utils.OpenWeatherCommunicationsManager;
 import com.rtnr.vo.Analysis;
 import com.rtnr.vo.Parcel;
@@ -18,7 +19,13 @@ public class Analyzer {
 
         Analysis a = new Analysis();
         a.setP(p);
-        a.setWaterSavings((p.getArea()/Constants.FEET_SQUARED_TO_METERES_SQUARED) * (OpenWeatherCommunicationsManager.getAverageRain(p.getLocationCoordinate().getLat(), p.getLocationCoordinate().getLng())/Constants.MM_TO_M));
+        //a.setWaterSavings((p.getArea()/Constants.FEET_SQUARED_TO_METERES_SQUARED) * (OpenWeatherCommunicationsManager.getAverageRain(p.getLocationCoordinate().getLat(), p.getLocationCoordinate().getLng())/Constants.MM_TO_M));
+        try {
+			a.setWaterSavings((p.getArea()/Constants.FEET_SQUARED_TO_METERES_SQUARED) * (MeteoStatCommunicationsManager.getAverageRain(p.getLocationCoordinate().getLat(), p.getLocationCoordinate().getLng())/Constants.MM_TO_M));
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
         return a;
 
     }

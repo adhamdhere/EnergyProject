@@ -43,7 +43,7 @@ function initAutocomplete() {
     var drawingManager;
     var map = new google.maps.Map(document.getElementById('map'), {
         center: {lat: 39.1724, lng: -86.5216},
-        zoom: 16.5,
+        zoom: 18,
         mapTypeId: 'satellite',
         styles: [
             {
