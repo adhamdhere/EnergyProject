@@ -46,18 +46,25 @@
     <br id = "stuff">
 
     <div class = "flex flex-wrap justify-around">
-        <button class = "bg-blue-500 py-2 px-4 rounded w-80 text-left text-lg text-white font-bold">
-            Water Saving potential: <span id = "water"></span>
-        </button>
-        <button class = "bg-yellow-500 py-2 px-4 rounded w-80 text-left text-lg text-white font-bold">
-            Solar energy saving potential: <span id = "electricity"></span>
-        </button>
+        <div class = "p-5">
+            <button class = "bg-yellow-500 py-2 px-4 rounded w-80 text-left text-lg text-white font-bold">
+                Solar energy saving potential: <span id = "electricity"></span>
+            </button>
+        </div>
+        <div class = "p-5">
+            <button class = "bg-blue-500 py-2 px-4 rounded w-80 text-left text-lg text-white font-bold">
+                Water Saving potential: <span id = "water"></span>
+            </button>
+        </div>
     </div>
     <div class = "pt-2">
         <input id="pac-input" class="controls" type="text" placeholder="Just search and draw!">
         <div id="map"></div>
     </div>
 
+    <div class = "content-center text-center">
+        <div class="mt-2 mb-8 max-w-4xl text-sm text-gray-600 md:mx-auto">Search a location to enable (☝️) the drawing tool here</div>
+    </div>
     <div class = "pb-32"></div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
