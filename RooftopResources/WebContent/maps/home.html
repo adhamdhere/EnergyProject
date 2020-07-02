@@ -1,3 +1,4 @@
+
 <html>
 <head>
     <meta charset="utf-8">
@@ -6,6 +7,8 @@
     <link rel="stylesheet" href="https://unpkg.com/tailwindcss@^1.2/dist/tailwind.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Muli:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/pattern.css" rel="stylesheet">
+
+
     <link rel = "stylesheet" href = "maps.css">
     <style>
         body {
@@ -15,20 +18,16 @@
 </head>
 
 <body class="text-gray-800 bg-gray-100">
-    <!--top green line-->
+    
     <div class="h-1 w-full bg-green-600"></div>
     <div class="h-screen mh-1080">
         <div class="mx-auto z-10">
             <nav class="w-100 pt-8 mx-20 rounded-sm">
-                    <a href='/RooftopResources/maps/home.html' class="inline-block mr-6 font-black text-green-600 text-2xl align-middle">Energy<span class="text-gray-600">Project</span></a>
-                    <!--
-                    <div class="float-right">
-                        <a href="{% url 'login' %}" class="py-2 px-4 bg-green-400 rounded-lg text-white font-bold hover:bg-green-700">About</a>
-                    </div>-->
+                    <a href='' class="inline-block mr-6 font-black text-green-600 text-2xl align-middle">Energy<span class="text-gray-600">Project</span></a>
+                    
             </nav>
         </div>
         <section class="container mx-auto px-5">
-            <!--<div class="pattern-dots-xl text-gray-300 absolute" style="height: 4rem; width: 4rem; top: 4rem; left: 0;"></div>-->
             <div class="text-left md:text-center">
                 <div class="font-semibold text-3xl md:text-5xl pt-10 leading-tight">
                     <div class="text-5xl md:text-6xl font-black tracking-tight">Roofs can do more! <br class="block md:hidden"/><span class="text-green-600">We are here to help you realize how much</span>.</div>
@@ -38,13 +37,6 @@
                     <a href="#stuff" class="text-xl px-6 py-4 mr-6 bg-green-600 hover:bg-green-800 transition ease-in-out duration-700 ease-in-out rounded-lg text-white font-bold">Find Savings</a>
                     <br class="hidden sm:block">
                 </div>
-                <div class = "inline float-left">
-                    <img src = "save.svg" style = "width:540px; height: 283.3px;">
-                </div>
-                
-                <div class = "inline float-right">
-                    <img src = "new_home.svg" style = "width:540px; height: 283.3px;">
-                </div>
             </div>
         </section>          
     </div>
@@ -52,25 +44,21 @@
 
     
     <br id = "stuff">
-    <!--
-    <section>
-        <div class="bg-gray-400 text-white rounded-lg">
-            example stats
-        </div>
-    </section>-->
 
-    <div class = "pt-20">
-        <div class="inline w-auto h-20 ml-10 py-2 px-4 bg-blue-500 rounded-lg text-white font-bold">
-            Water saving potential: <span id = "water"></span>
-        </div>
-        <div class="inline w-auto h-20 ml-10 py-2 px-4 bg-yellow-500 rounded-lg text-white font-bold">
-            Electricity saving potential: Under Construction! <span id = "electricity"></span>
-        </div>
+    <div class = "flex flex-wrap justify-around">
+        <button class = "bg-blue-500 py-2 px-4 rounded w-80 text-left text-lg text-white font-bold">
+            Water Saving potential: <span id = "water"></span>
+        </button>
+        <button class = "bg-yellow-500 py-2 px-4 rounded w-80 text-left text-lg text-white font-bold">
+            Solar energy saving potential: <span id = "electricity"></span>
+        </button>
+    </div>
+    <div class = "pt-2">
         <input id="pac-input" class="controls" type="text" placeholder="Just search and draw!">
         <div id="map"></div>
     </div>
 
-    <div class = "pb-64"></div>
+    <div class = "pb-32"></div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="maps.js"></script>
@@ -79,10 +67,10 @@
 
     
 
-    <div class = "bg-green-600 py-4 rounded-t-lg content-center">
+    <div class = "bg-green-600 py-4 content-center">
 
         <div class = "text-center text-white text-lg">
-            <span class = "font-bold">Designed and Engineered with </span><span>&hearts;</span><span class = "font-bold"> by </span><a href = "https://www.linkedin.com/in/advaitdhamdhere/" class = "border border-black rounded-full bg-white text-black p-1 py-1 font-bold">Advait Dhamdhere</a> and <a href = "https://www.linkedin.com/in/simarkapooriu/" class = "border border-black p-1 py-1 rounded-full bg-white text-black font-bold">Simar Kapoor</a>
+            Designed and Engineered with <span>&hearts;</span><span class = "font-bold"> by </span><a href = "https://www.linkedin.com/in/advaitdhamdhere/" class = "font-bold">Advait Dhamdhere</a> and <a href = "https://www.linkedin.com/in/simarkapooriu/" class = "font-bold">Simar Kapoor</a>
         </div>
 
 
