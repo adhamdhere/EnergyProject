@@ -4,7 +4,7 @@ Web Application, allows users to enter an address and get information about wate
 Technology Stack used:
 * Tomcat (Version 8 as container)
 * Java (Server side API implementation)
-* HTML/CSS (Web Presentation)
+* HTML/TailwindCSS (Web Presentation)
 * Javascript (Client side scripting)
 * AWS EC2 (Hosting)
 
