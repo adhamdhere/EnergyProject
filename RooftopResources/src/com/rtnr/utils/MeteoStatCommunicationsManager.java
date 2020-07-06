@@ -11,7 +11,7 @@ public class MeteoStatCommunicationsManager {
 
     // Requires lat and lon
     public static double getAverageRain(double lat, double lon) throws IOException, Exception{
-    	String key = "&key=MgatCOet";
+    	String key = "API KEY GOES HERE";
     	String lat_and_lon = "lat=" + lat + "&lon=" + lon +"&limit=5&";
 
         String station_id_url = Constants.METEO_STAT_STATION_ID_URL + lat_and_lon + key; //when external URL, add + lat, + lon
