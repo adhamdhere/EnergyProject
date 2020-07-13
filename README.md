@@ -1,4 +1,5 @@
 # EnergyProject
+Link to Project: http://ec2-3-15-152-181.us-east-2.compute.amazonaws.com:8080/RooftopResources/maps/home.html
 Web Application, allows users to enter an address and get information about water and energy savings
 
 Technology Stack used:
